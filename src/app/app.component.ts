@@ -10,7 +10,4 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'sh-ng-lib';
-
-
-   count = signal(0);
 }
