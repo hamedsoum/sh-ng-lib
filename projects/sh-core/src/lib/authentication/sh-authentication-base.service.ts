@@ -3,41 +3,28 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { JwtHelperService } from "@auth0/angular-jwt";
-import { User } from '../_models/user.model';
+import {SHUser, ShUtils} from '@sh/base';
 
 export abstract class SHAuthenticationBaseService {
 
   private host = environment.apiUrl;
-  private token: string;
-  private loggedInUsername: string;
+  private token?: string;
+  private loggedInUsername?: string;
   private jwtHelper = new JwtHelperService()
 
   constructor(private http: HttpClient) { }
-  /**
-   *
-   * @param user
-   * @returns User
-   */
-  public login(user: User): Observable<HttpResponse<User>> {
-    return this.http.post<User>(`${this.host}/user/login`, user, { observe: 'response' });
+
+  public login(user: SHUser): Observable<HttpResponse<SHUser>> {
+    return this.http.post<SHUser>(`${this.host}/user/login`, user, { observe: 'response' });
   }
 
-  /**
-   * user register
-   * @param user
-   * @returns User
-   */
-  public register(user: User): Observable<User> {
-    return this.http.post<User>(`${this.host}/register`, user);
+  public register(user: SHUser): Observable<SHUser> {
+    return this.http.post<SHUser>(`${this.host}/register`, user);
   }
 
-
-  /**
-   * logOut function
-   */
   public logOut(): void {
-    this.token = null;
-    this.loggedInUsername = null;
+    this.token = undefined;
+    this.loggedInUsername = undefined;
     localStorage.removeItem('user');
     // localStorage.removeItem('token');
     sessionStorage.removeItem('token');
@@ -45,70 +32,41 @@ export abstract class SHAuthenticationBaseService {
 
   }
 
-
-  /**
-   * create token auhtentication
-   * @param token
-   */
   public saveToken(token: string): void {
     this.token = token;
-    this.loggedInUsername = null;
+    this.loggedInUsername = undefined;
     // localStorage.setItem('token', token);
     sessionStorage.setItem('token', token);
   }
 
-  /**
-   * add user information to localstrorage
-   * @param user
-   */
-  public addUserToLocalStorage(user: User): void {
+  public addSHUserToLocalStorage(user: SHUser): void {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
-
-  /**
-   * get user to localstorage
-   * @returns user information in JSON format
-   */
-  public getUserFromLocalStorage(): User {
-    return JSON.parse(localStorage.getItem('user'));
+  public getSHUserFromLocalStorage(): SHUser | undefined {
+    return !ShUtils.isEmpty(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')!) :  undefined;
   }
 
-  /**
-   * get user token
-   */
   public loadToken(): void {
     // this.token = localStorage.getItem('token');
-    this.token = sessionStorage.getItem('token');
+    if(!ShUtils.isEmpty(sessionStorage.getItem('token')))  this.token = sessionStorage.getItem('token')!;
   }
 
-
-  /**
-   * get user token
-   */
-
-  public getToken(): string {
+  public getToken(): string | undefined {
     return this.token;
   }
 
-
-  /**
-   * verify if user is logged in
-   * @returns
-   */
   public isLoggedIn(): boolean {
     this.loadToken()
-    if (this.token != null && this.token !== '') {
-      if (this.jwtHelper.decodeToken(this.token).sub != null || '') {
-        if (!this.jwtHelper.isTokenExpired(this.token)) {
-          this.loggedInUsername = this.jwtHelper.decodeToken(this.token);
+    if (!ShUtils.isEmpty(this.token)) {
+      if (!ShUtils.isEmpty(this.jwtHelper.decodeToken(this.token!).sub)) {
+        if (!this.jwtHelper.isTokenExpired(this.token!)) {
+          this.loggedInUsername = this.jwtHelper.decodeToken(this.token!)!;
           return true;
         }
       }
-    } else {
+    }
       this.logOut();
       return false;
-    }
-    return;
   }
 }
