@@ -1,0 +1,1 @@
+import { Injectable } from '@angular/core';import { SHDataService } from './sh-data.service';import { HttpClient } from '@angular/common/http';const  APIUrlAddress="http://localhost:8080/api/addresses";@Injectable({    providedIn: 'root'})export class AddressService extends SHDataService{    constructor(http:HttpClient){        super(APIUrlAddress,http);    }}
