@@ -1,25 +1,27 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http'
+import { HttpClient, HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { JwtHelperService } from "@auth0/angular-jwt";
-import {SHUser, ShUtils} from '@sh/base';
+import {SHAuthenticationEndpoint, SHAuthenticationRoute} from '../domain/sh-authentication';
+import {SHUser, ShUtils, SHAuthenticationUsernamePasswordRequest} from '@sh/base';
+import {Router} from '@angular/router';
 
 export abstract class SHAuthenticationBaseService {
 
-  private host = environment.apiUrl;
   private token?: string;
   private loggedInUsername?: string;
   private jwtHelper = new JwtHelperService()
 
-  constructor(private http: HttpClient) { }
+  public abstract getEndpoint(): SHAuthenticationEndpoint;
+  public abstract getRoute(): SHAuthenticationRoute;
 
-  public login(user: SHUser): Observable<HttpResponse<SHUser>> {
-    return this.http.post<SHUser>(`${this.host}/user/login`, user, { observe: 'response' });
+  constructor(private http: HttpClient, protected router: Router) { }
+
+  public login(request: SHAuthenticationUsernamePasswordRequest): Observable<HttpResponse<SHUser>> {
+    return this.http.post<SHUser>(this.getEndpoint().login, request, { observe: 'response' });
   }
 
   public register(user: SHUser): Observable<SHUser> {
-    return this.http.post<SHUser>(`${this.host}/register`, user);
+    return this.http.post<SHUser>(this.getEndpoint().register, user);
   }
 
   public logOut(): void {
@@ -29,6 +31,7 @@ export abstract class SHAuthenticationBaseService {
     // localStorage.removeItem('token');
     sessionStorage.removeItem('token');
     localStorage.removeItem('users');
+    this.router.navigate([this.getRoute().login]).then();
 
   }
 
@@ -39,11 +42,11 @@ export abstract class SHAuthenticationBaseService {
     sessionStorage.setItem('token', token);
   }
 
-  public addSHUserToLocalStorage(user: SHUser): void {
+  public addUserToLocalStorage(user: SHUser): void {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
-  public getSHUserFromLocalStorage(): SHUser | undefined {
+  public getUserFromLocalStorage(): SHUser | undefined {
     return !ShUtils.isEmpty(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')!) :  undefined;
   }
 
@@ -56,7 +59,7 @@ export abstract class SHAuthenticationBaseService {
     return this.token;
   }
 
-  public isLoggedIn(): boolean {
+  public isAuthenticate(): boolean {
     this.loadToken()
     if (!ShUtils.isEmpty(this.token)) {
       if (!ShUtils.isEmpty(this.jwtHelper.decodeToken(this.token!).sub)) {
