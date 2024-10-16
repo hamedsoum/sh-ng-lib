@@ -1,0 +1,1 @@
+export interface SHUser {    userId: string;    firstname: string;    lastname: string;    email: string;    admin: boolean;    addresses: SHAddress[];}export interface SHAddress {    addressID: string;    city: string;    country: string;    street: string;    postal: string;    type: string;}

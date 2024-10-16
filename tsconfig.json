@@ -16,8 +16,14 @@
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
     "paths": {
+      "sh-authentication": [
+        "./dist/sh-authentication"
+      ],
       "sh-base": [
         "./dist/sh-base"
+      ],
+      "sh-core": [
+        "./dist/sh-core"
       ]
     },
     "importHelpers": true,
