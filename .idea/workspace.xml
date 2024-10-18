@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c08e6f4e-7574-4987-bd44-b950d2681436" name="Changes" comment="" />
+    <list default="true" id="c08e6f4e-7574-4987-bd44-b950d2681436" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/projects/sh-authentication/src/lib/api/constant/sh-authentication-constant.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-authentication/src/lib/api/domain/sh-authentication.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-authentication/src/lib/api/guard/sh-authentication-guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-authentication/src/lib/api/interceptor/sh-authentication.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-authentication/src/lib/api/services/sh-authentication-base.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/domain/sh-address.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/domain/sh-audit.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/domain/sh-authentication.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/domain/sh-base.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/domain/sh-person.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/domain/sh-user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/services/sh-http-client.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/utils/sh-utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/sh-authentication/src/public-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-authentication/src/public-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/sh-base/src/public-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-base/src/public-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,11 +59,24 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/iroxs/DEV/training/angular/sh-ng-lib",
+    "last_opened_file_path": "/Users/iroxs/DEV/training/angular/sh-ng-lib/projects/sh-base/src/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/iroxs/DEV/training/angular/sh-ng-lib/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/projects/sh-base/src/lib" />
+      <recent name="$PROJECT_DIR$/projects/sh-authentication/src/lib/api" />
+      <recent name="$PROJECT_DIR$/projects/sh-core/src/lib" />
+      <recent name="$PROJECT_DIR$/projects" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
@@ -73,10 +110,19 @@
       <updated>1729070790402</updated>
       <workItem from="1729070792180" duration="15000" />
       <workItem from="1729070835807" duration="24000" />
+      <workItem from="1729070886732" duration="1215000" />
+      <workItem from="1729205859038" duration="3981000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="additionalRoots">
+      <list>
+        <option value="$PROJECT_DIR$/dist/sh-authentication" />
+        <option value="$PROJECT_DIR$/dist/sh-base" />
+        <option value="$PROJECT_DIR$/dist/sh-core" />
+      </list>
+    </option>
   </component>
 </project>
