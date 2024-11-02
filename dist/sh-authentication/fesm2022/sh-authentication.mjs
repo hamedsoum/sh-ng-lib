@@ -1,6 +1,5 @@
 import * as i0 from '@angular/core';
 import { Injectable, Component } from '@angular/core';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import * as i1 from '@sh/base';
 import { SHUtils } from '@sh/base';
 import * as i2 from '@angular/router';
@@ -55,7 +54,6 @@ class SHAuthenticationBaseService {
     router;
     token;
     loggedInUsername;
-    jwtHelper = new JwtHelperService;
     constructor(http, router) {
         this.http = http;
         this.router = router;
@@ -98,14 +96,12 @@ class SHAuthenticationBaseService {
     }
     isAuthenticate() {
         this.loadToken();
-        if (!SHUtils.isEmpty(this.token)) {
-            if (!SHUtils.isEmpty(this.jwtHelper.decodeToken(this.token).sub)) {
-                if (!this.jwtHelper.isTokenExpired(this.token)) {
-                    this.loggedInUsername = this.jwtHelper.decodeToken(this.token);
-                    return true;
-                }
-            }
-        }
+        // if (!SHUtils.isEmpty(this.token)) {
+        //   if (!SHUtils.isEmpty(jwt_decode(this.token!).sub)) {
+        //       this.loggedInUsername = jwt_decode(this.token!)!;
+        //       return true;
+        //     }
+        //   }
         this.logOut();
         return false;
     }

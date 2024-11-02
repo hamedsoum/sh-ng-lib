@@ -1,6 +1,5 @@
 import {HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { JwtHelperService } from "@auth0/angular-jwt";
 import {SHAuthenticationEndpoint, SHAuthenticationRoute} from '../domain/sh-authentication';
 import {SHUser, SHUtils,SHttpClientService, SHAuthenticationUsernamePasswordRequest, XSAuthenticationPINCodeRequest} from '@sh/base';
 import {Router} from '@angular/router';
@@ -12,7 +11,6 @@ export abstract class SHAuthenticationBaseService {
 
   private token?: string;
   private loggedInUsername?: string;
-  private jwtHelper = new JwtHelperService
 
   public abstract getEndpoint(): SHAuthenticationEndpoint;
   public abstract getRoute(): SHAuthenticationRoute;
@@ -65,14 +63,13 @@ export abstract class SHAuthenticationBaseService {
 
   public isAuthenticate(): boolean {
     this.loadToken()
-    if (!SHUtils.isEmpty(this.token)) {
-      if (!SHUtils.isEmpty(this.jwtHelper.decodeToken(this.token!).sub)) {
-        if (!this.jwtHelper.isTokenExpired(this.token!)) {
-          this.loggedInUsername = this.jwtHelper.decodeToken(this.token!)!;
-          return true;
-        }
-      }
-    }
+    // if (!SHUtils.isEmpty(this.token)) {
+    //   if (!SHUtils.isEmpty(jwt_decode(this.token!).sub)) {
+    //       this.loggedInUsername = jwt_decode(this.token!)!;
+    //       return true;
+    //     }
+    //   }
+
       this.logOut();
       return false;
   }

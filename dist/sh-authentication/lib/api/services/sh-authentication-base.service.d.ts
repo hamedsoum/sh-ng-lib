@@ -9,7 +9,6 @@ export declare abstract class SHAuthenticationBaseService {
     protected router: Router;
     private token?;
     private loggedInUsername?;
-    private jwtHelper;
     abstract getEndpoint(): SHAuthenticationEndpoint;
     abstract getRoute(): SHAuthenticationRoute;
     constructor(http: SHttpClientService, router: Router);
