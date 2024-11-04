@@ -67,3 +67,12 @@ export declare enum SHDayOfWeek {
     SUNDAY = "sunday"
 }
 export type SHDayOfWeekStr = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday';
+export interface SHSearchResult<T> {
+    total: number;
+    data: T[];
+    pagination?: SHPagination;
+}
+export interface SHPagination {
+    page: number;
+    size: number;
+}

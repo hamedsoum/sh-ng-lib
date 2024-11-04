@@ -1,35 +1,141 @@
+import * as i1 from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import * as i0 from '@angular/core';
 import { Injectable, Component } from '@angular/core';
-import * as i1 from '@angular/common/http';
 
-class ShBaseService {
-    constructor() { }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: ShBaseService, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: ShBaseService, providedIn: 'root' });
+class SHUtils {
+    static isEmpty(obj) {
+        if (SHUtils.isNull(obj)) {
+            return true;
+        }
+        if (SHUtils.isString(obj) && obj.trim().length === 0) {
+            return true;
+        }
+        if (obj instanceof Map || obj instanceof Set) {
+            return obj.size === 0;
+        }
+        if (Array.isArray(obj) && obj.length === 0) {
+            return true;
+        }
+        return Object.keys(obj).length === 0 && obj.constructor === Object;
+    }
+    static isNull(obj) {
+        return obj === null || obj === undefined;
+    }
+    static isString(obj) {
+        if (SHUtils.isNull(obj)) {
+            return false;
+        }
+        return typeof obj === 'string' || obj instanceof String;
+    }
+    static notNull(obj, varName) {
+        if (SHUtils.isNull(obj)) {
+            throw new Error((!SHUtils.isEmpty(varName) ? varName : 'The given variable') + ' must not be null.');
+        }
+    }
+    static notEmpty(obj, varName) {
+        if (SHUtils.isEmpty(obj)) {
+            throw new Error((!SHUtils.isEmpty(varName) ? varName : 'The given variable') + ' must not be empty or null.');
+        }
+    }
+    static isMap(obj) {
+        return obj instanceof Map;
+    }
+    static convertMapToObject(map) {
+        if (SHUtils.isNull(map) || !SHUtils.isMap(map)) {
+            throw new Error('map must be a non null instance of Map.');
+        }
+        return Object.fromEntries(map);
+    }
+    static toHttpParameters(obj, fields) {
+        let params = new HttpParams();
+        if (!SHUtils.isEmpty(obj)) {
+            for (const [key, value] of Object.entries(obj)) {
+                let pValue = value;
+                params = params.set(key, pValue);
+            }
+        }
+        if (!SHUtils.isEmpty(fields))
+            params = params.set('fields', fields.join(','));
+        return params;
+    }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: ShBaseService, decorators: [{
-            type: Injectable,
-            args: [{
-                    providedIn: 'root'
-                }]
-        }], ctorParameters: () => [] });
+
+class SHBaseService {
+    httpClientService;
+    resourceName;
+    endpointBase;
+    constructor(httpClientService, endpointBase, resourceName) {
+        this.httpClientService = httpClientService;
+        SHUtils.notEmpty(endpointBase, endpointBase);
+        SHUtils.notEmpty(resourceName, resourceName);
+        this.resourceName = resourceName.trim();
+        this.endpointBase = resourceName.trim();
+    }
+    create(body) {
+        SHUtils.notEmpty(body, this.resourceName);
+        return this.httpClientService.post(this.buildEndpoint(), body);
+    }
+    update(resourceID, fieldValueData) {
+        SHUtils.notEmpty(resourceID, this.resourceName + 'ID');
+        SHUtils.notEmpty(fieldValueData, 'fieldValueData');
+        let body = SHUtils.isMap(fieldValueData) ? SHUtils.convertMapToObject(fieldValueData) : fieldValueData;
+        return this.httpClientService.patch(this.buildEndpoint(resourceID), body);
+    }
+    findOneByID(resourceID) {
+        SHUtils.notEmpty(resourceID, this.resourceName + 'ID');
+        return this.httpClientService.get(this.buildEndpoint(resourceID));
+    }
+    retrieve(resourceID) {
+        return this.findOneByID(resourceID);
+    }
+    findF(search, fields) {
+        return this.httpClientService.get(this.buildEndpoint(), SHUtils.toHttpParameters(search, fields));
+    }
+    find(search) {
+        return this.httpClientService.get(this.buildEndpoint(), SHUtils.toHttpParameters(search));
+    }
+    search(search) {
+        SHUtils.notEmpty(search, this.resourceName + 'Search');
+        SHUtils.notNull(search.paginationPage, 'search.paginationPage');
+        SHUtils.notNull(search.paginationSize, 'search.paginationSize');
+        // TODO: implement below method
+        // SHUtils.removeNullAndUndefinedEntries(search);
+        // SHUtils.removeEmptyObjectEntries(search);
+        return this.httpClientService.get(this.buildEndpoint('search'), SHUtils.toHttpParameters(search));
+    }
+    setAsDeleted(resourceID) {
+        SHUtils.notEmpty(resourceID, this.resourceName + 'ID');
+        return this.httpClientService.patch(this.buildEndpoint(resourceID));
+    }
+    purge(resourceID) {
+        SHUtils.notEmpty(resourceID, this.resourceName + 'ID');
+        return this.httpClientService.delete(this.buildEndpoint(resourceID));
+    }
+    buildEndpoint(resourceID) {
+        return !SHUtils.isEmpty(resourceID) ? `${this.endpointBase}/${resourceID}` : this.endpointBase;
+    }
+}
 
 class SHttpClientService {
     httpClient;
     constructor(httpClient) {
         this.httpClient = httpClient;
     }
-    // public request<T>(method: SHHttpMethod, endpoint: string, options: {}): Observable<T> {
-    //     ShUtils.notEmpty(method, 'method');
-    //     return this.httpClient.request<T>(method.toString(), endpoint, options);
-    // }
-    //
-    // public get<T>(endpoint: string, parameters?: HttpParams, httpHeaders?: HttpHeaders, nativeOptions?: any): Observable<T> {
-    //     return this.httpClient.get<T>(this.buildEndpoint(endpoint), this.buildOptions(parameters, httpHeaders, nativeOptions));
-    // }
-    //
-    post(endpoint, body, parameters, httpHeaders, nativeOptions) {
-        return this.httpClient.post(endpoint, body, {});
+    get(endpoint, parameters, httpHeaders) {
+        return this.httpClient.get(endpoint, { headers: httpHeaders, params: parameters });
+    }
+    post(endpoint, body, httpHeaders, parameters) {
+        return this.httpClient.post(endpoint, body, { headers: httpHeaders, params: parameters });
+    }
+    put(endpoint, body, parameters, httpHeaders) {
+        return this.httpClient.put(endpoint, body, { headers: httpHeaders, params: parameters });
+    }
+    patch(endpoint, body, parameters, httpHeaders) {
+        return this.httpClient.patch(endpoint, body, { headers: httpHeaders, params: parameters });
+    }
+    delete(endpoint, parameters, httpHeaders) {
+        return this.httpClient.delete(endpoint, { headers: httpHeaders, params: parameters });
     }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: SHttpClientService, deps: [{ token: i1.HttpClient }], target: i0.ɵɵFactoryTarget.Injectable });
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: SHttpClientService });
@@ -152,33 +258,6 @@ var SHMaritalStatus;
     SHMaritalStatus["WIDOWED"] = "widowed";
 })(SHMaritalStatus || (SHMaritalStatus = {}));
 
-class SHUtils {
-    static isEmpty(obj) {
-        if (SHUtils.isNull(obj)) {
-            return true;
-        }
-        if (SHUtils.isString(obj) && obj.trim().length === 0) {
-            return true;
-        }
-        if (obj instanceof Map || obj instanceof Set) {
-            return obj.size === 0;
-        }
-        if (Array.isArray(obj) && obj.length === 0) {
-            return true;
-        }
-        return Object.keys(obj).length === 0 && obj.constructor === Object;
-    }
-    static isNull(obj) {
-        return obj === null || obj === undefined;
-    }
-    static isString(obj) {
-        if (SHUtils.isNull(obj)) {
-            return false;
-        }
-        return typeof obj === 'string' || obj instanceof String;
-    }
-}
-
 /*
  * Public API Surface of sh-base
  */
@@ -188,5 +267,5 @@ class SHUtils {
  * Generated bundle index. Do not edit.
  */
 
-export { SHAddressType, SHBloodType, SHDayOfWeek, SHGender, SHHttpMethod, SHLanguage, SHMaritalStatus, SHPKDTOAuditFullState, SHPersonTitle, SHPredefinedPeriod, SHSortOrder, SHTemporalUnit, SHUtils, SHttpClientService, ShBaseComponent, ShBaseService };
+export { SHAddressType, SHBaseService, SHBloodType, SHDayOfWeek, SHGender, SHHttpMethod, SHLanguage, SHMaritalStatus, SHPKDTOAuditFullState, SHPersonTitle, SHPredefinedPeriod, SHSortOrder, SHTemporalUnit, SHUtils, SHttpClientService, ShBaseComponent };
 //# sourceMappingURL=sh-base.mjs.map
