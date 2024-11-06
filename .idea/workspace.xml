@@ -4,28 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c08e6f4e-7574-4987-bd44-b950d2681436" name="Changes" comment="base service to handle all http call ...">
-      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/94/e7/1177549626ec2561ba1504a22f746591349c20af4f34cc7e41a87865ce0b" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/94/e7/1177549626ec2561ba1504a22f746591349c20af4f34cc7e41a87865ce0b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/d4/15/120b566d3f56db745e6577f2360ef5f8fad9b254a0a19526bc085e075390" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/d4/15/120b566d3f56db745e6577f2360ef5f8fad9b254a0a19526bc085e075390" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/tsbuildinfo/sh-base.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/tsbuildinfo/sh-base.tsbuildinfo" afterDir="false" />
+    <list default="true" id="c08e6f4e-7574-4987-bd44-b950d2681436" name="Changes" comment="....">
+      <change afterPath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-local-storage.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/domain/sh-audit.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/domain/sh-audit.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/domain/sh-base.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/domain/sh-base.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/domain/sh-user.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/domain/sh-user.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-http-client.service.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-http-client.service.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/sh-base.service.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/utils/sh-utils.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/utils/sh-utils.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/public-api.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/public-api.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/lib/domain/sh-base.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/lib/domain/sh-base.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-http-client.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-http-client.service.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/lib/sh-base.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/lib/utils/sh-utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/lib/utils/sh-utils.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/public-api.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/public-api.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/sh-base/src/lib/services/sh-http-client.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/services/sh-http-client.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/sh-base/src/lib/sh-base.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/sh-base/src/public-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-base/src/public-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/public-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/public-api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +101,8 @@
       <workItem from="1730474577445" duration="1588000" />
       <workItem from="1730499054593" duration="692000" />
       <workItem from="1730499848936" duration="5583000" />
-      <workItem from="1730701157082" duration="7048000" />
+      <workItem from="1730701157082" duration="7394000" />
+      <workItem from="1730932540263" duration="3274000" />
     </task>
     <task id="LOCAL-00001" summary="@auth0/angular-jwt added to sh-authentication peerDependencies...">
       <option name="closed" value="true" />
@@ -153,7 +136,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730706991808</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="....">
+      <option name="closed" value="true" />
+      <created>1730708663589</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730708663589</updated>
+    </task>
+    <task id="LOCAL-00006" summary="....">
+      <option name="closed" value="true" />
+      <created>1730708668193</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730708668193</updated>
+    </task>
+    <task id="LOCAL-00007" summary="....">
+      <option name="closed" value="true" />
+      <created>1730708674430</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730708674430</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,9 +175,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="@auth0/angular-jwt added to sh-authentication peerDependencies..." />
-    <MESSAGE value="...." />
     <MESSAGE value="..." />
     <MESSAGE value="base service to handle all http call ..." />
-    <option name="LAST_COMMIT_MESSAGE" value="base service to handle all http call ..." />
+    <MESSAGE value="...." />
+    <option name="LAST_COMMIT_MESSAGE" value="...." />
   </component>
 </project>
