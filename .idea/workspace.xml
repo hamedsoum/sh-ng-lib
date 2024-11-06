@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c08e6f4e-7574-4987-bd44-b950d2681436" name="Changes" comment="....">
-      <change afterPath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-local-storage.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/public-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/public-api.ts" afterDir="false" />
+    <list default="true" id="c08e6f4e-7574-4987-bd44-b950d2681436" name="Changes" comment="local storage service...">
+      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-local-storage.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-local-storage.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +100,7 @@
       <workItem from="1730499054593" duration="692000" />
       <workItem from="1730499848936" duration="5583000" />
       <workItem from="1730701157082" duration="7394000" />
-      <workItem from="1730932540263" duration="3274000" />
+      <workItem from="1730932540263" duration="3407000" />
     </task>
     <task id="LOCAL-00001" summary="@auth0/angular-jwt added to sh-authentication peerDependencies...">
       <option name="closed" value="true" />
@@ -160,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730708674430</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="local storage service...">
+      <option name="closed" value="true" />
+      <created>1730937004170</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1730937004170</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +184,7 @@
     <MESSAGE value="..." />
     <MESSAGE value="base service to handle all http call ..." />
     <MESSAGE value="...." />
-    <option name="LAST_COMMIT_MESSAGE" value="...." />
+    <MESSAGE value="local storage service..." />
+    <option name="LAST_COMMIT_MESSAGE" value="local storage service..." />
   </component>
 </project>
