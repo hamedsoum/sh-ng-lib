@@ -1,7 +1,10 @@
-import * as i1 from '@angular/common/http';
-import { HttpParams } from '@angular/common/http';
 import * as i0 from '@angular/core';
 import { Injectable, Component } from '@angular/core';
+import * as i1 from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
+
+class SHBaseService {
+}
 
 class SHUtils {
     static isEmpty(obj) {
@@ -61,66 +64,13 @@ class SHUtils {
     }
 }
 
-class SHBaseService {
-    httpClientService;
-    resourceName;
-    endpointBase;
-    constructor(httpClientService, endpointBase, resourceName) {
-        this.httpClientService = httpClientService;
-        SHUtils.notEmpty(endpointBase, endpointBase);
-        SHUtils.notEmpty(resourceName, resourceName);
-        this.resourceName = resourceName.trim();
-        this.endpointBase = resourceName.trim();
-    }
-    create(body) {
-        SHUtils.notEmpty(body, this.resourceName);
-        return this.httpClientService.post(this.buildEndpoint(), body);
-    }
-    update(resourceID, fieldValueData) {
-        SHUtils.notEmpty(resourceID, this.resourceName + 'ID');
-        SHUtils.notEmpty(fieldValueData, 'fieldValueData');
-        let body = SHUtils.isMap(fieldValueData) ? SHUtils.convertMapToObject(fieldValueData) : fieldValueData;
-        return this.httpClientService.patch(this.buildEndpoint(resourceID), body);
-    }
-    findOneByID(resourceID) {
-        SHUtils.notEmpty(resourceID, this.resourceName + 'ID');
-        return this.httpClientService.get(this.buildEndpoint(resourceID));
-    }
-    retrieve(resourceID) {
-        return this.findOneByID(resourceID);
-    }
-    findF(search, fields) {
-        return this.httpClientService.get(this.buildEndpoint(), SHUtils.toHttpParameters(search, fields));
-    }
-    find(search) {
-        return this.httpClientService.get(this.buildEndpoint(), SHUtils.toHttpParameters(search));
-    }
-    search(search) {
-        SHUtils.notEmpty(search, this.resourceName + 'Search');
-        SHUtils.notNull(search.paginationPage, 'search.paginationPage');
-        SHUtils.notNull(search.paginationSize, 'search.paginationSize');
-        // TODO: implement below method
-        // SHUtils.removeNullAndUndefinedEntries(search);
-        // SHUtils.removeEmptyObjectEntries(search);
-        return this.httpClientService.get(this.buildEndpoint('search'), SHUtils.toHttpParameters(search));
-    }
-    setAsDeleted(resourceID) {
-        SHUtils.notEmpty(resourceID, this.resourceName + 'ID');
-        return this.httpClientService.patch(this.buildEndpoint(resourceID));
-    }
-    purge(resourceID) {
-        SHUtils.notEmpty(resourceID, this.resourceName + 'ID');
-        return this.httpClientService.delete(this.buildEndpoint(resourceID));
-    }
-    buildEndpoint(resourceID) {
-        return !SHUtils.isEmpty(resourceID) ? `${this.endpointBase}/${resourceID}` : this.endpointBase;
-    }
-}
-
 class SHttpClientService {
     httpClient;
-    constructor(httpClient) {
+    apiBaseURL;
+    constructor(httpClient, apiBaseURL) {
         this.httpClient = httpClient;
+        SHUtils.notEmpty(apiBaseURL, "apiBaseURL");
+        this.apiBaseURL = apiBaseURL.trim();
     }
     get(endpoint, parameters, httpHeaders) {
         return this.httpClient.get(endpoint, { headers: httpHeaders, params: parameters });
@@ -137,12 +87,18 @@ class SHttpClientService {
     delete(endpoint, parameters, httpHeaders) {
         return this.httpClient.delete(endpoint, { headers: httpHeaders, params: parameters });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: SHttpClientService, deps: [{ token: i1.HttpClient }], target: i0.ɵɵFactoryTarget.Injectable });
+    setAPIBaseURL(apiBaseURL) {
+        SHUtils.notEmpty(apiBaseURL, 'apiBaseURL');
+        //TODO:
+        // this.apiBaseURL = XSUtils.removeLastChar(apiBaseURL, '/') + '/';
+        this.apiBaseURL = apiBaseURL;
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: SHttpClientService, deps: "invalid", target: i0.ɵɵFactoryTarget.Injectable });
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: SHttpClientService });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: SHttpClientService, decorators: [{
             type: Injectable
-        }], ctorParameters: () => [{ type: i1.HttpClient }] });
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined }] });
 
 class ShBaseComponent {
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.8", ngImport: i0, type: ShBaseComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });

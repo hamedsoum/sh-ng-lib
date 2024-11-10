@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c08e6f4e-7574-4987-bd44-b950d2681436" name="Changes" comment="local storage service...">
-      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-local-storage.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-local-storage.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-base.service.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-base.service.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-http-client.service.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-http-client.service.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-base.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-base.service.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-http-client.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-http-client.service.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-core/esm2022/lib/sh-core.service.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-core/esm2022/public-api.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-core/esm2022/public-api.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-core/fesm2022/sh-core.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-core/fesm2022/sh-core.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-core/fesm2022/sh-core.mjs.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-core/fesm2022/sh-core.mjs.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-core/lib/sh-core.service.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-core/public-api.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-core/public-api.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/sh-base/src/lib/services/sh-base.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/services/sh-base.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/lib/sh-core.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-core.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/lib/sh-core.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-core.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/public-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/public-api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +73,9 @@
       <recent name="$PROJECT_DIR$/projects/sh-core/src/lib" />
       <recent name="$PROJECT_DIR$/projects" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/projects/sh-core/src/lib/api/service" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
@@ -100,7 +119,9 @@
       <workItem from="1730499054593" duration="692000" />
       <workItem from="1730499848936" duration="5583000" />
       <workItem from="1730701157082" duration="7394000" />
-      <workItem from="1730932540263" duration="3407000" />
+      <workItem from="1730932540263" duration="4481000" />
+      <workItem from="1731240028888" duration="1000" />
+      <workItem from="1731245574091" duration="2439000" />
     </task>
     <task id="LOCAL-00001" summary="@auth0/angular-jwt added to sh-authentication peerDependencies...">
       <option name="closed" value="true" />
@@ -166,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730937004170</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="local storage service...">
+      <option name="closed" value="true" />
+      <created>1730937059739</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1730937059739</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +204,6 @@
       <list>
         <option value="$PROJECT_DIR$/dist/sh-authentication" />
         <option value="$PROJECT_DIR$/dist/sh-base" />
-        <option value="$PROJECT_DIR$/dist/sh-core" />
       </list>
     </option>
   </component>

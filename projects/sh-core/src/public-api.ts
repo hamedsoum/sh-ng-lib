@@ -3,7 +3,7 @@
  */
 
 //--- Services ---
-export * from './lib/sh-core.service';
+export * from './lib/api/service/sh-core.service';
 export * from './lib/api/service/sh-local-storage.service';
 
 //--- Components ---
