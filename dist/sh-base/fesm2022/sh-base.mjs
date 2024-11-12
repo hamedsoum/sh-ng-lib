@@ -2,11 +2,15 @@ import * as i0 from '@angular/core';
 import { Injectable, Component } from '@angular/core';
 import * as i1 from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
+import { v4 } from 'uuid';
 
 class SHBaseService {
 }
 
 class SHUtils {
+    static uuid() {
+        return v4();
+    }
     static isEmpty(obj) {
         if (SHUtils.isNull(obj)) {
             return true;

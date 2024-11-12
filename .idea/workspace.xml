@@ -4,24 +4,86 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c08e6f4e-7574-4987-bd44-b950d2681436" name="Changes" comment="local storage service...">
+    <list default="true" id="c08e6f4e-7574-4987-bd44-b950d2681436" name="Changes" comment="sh core service">
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/25/22/05e954e1e1119ad5149531cc778551e61a992f12517183bd02725aa882ab" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/25/22/05e954e1e1119ad5149531cc778551e61a992f12517183bd02725aa882ab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/94/e7/1177549626ec2561ba1504a22f746591349c20af4f34cc7e41a87865ce0b" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/94/e7/1177549626ec2561ba1504a22f746591349c20af4f34cc7e41a87865ce0b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/a7/40/d920bb0d4b7e0bc40eed7807d278c55c7b7796f05447ff1bbd71834d6a87" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/a7/40/d920bb0d4b7e0bc40eed7807d278c55c7b7796f05447ff1bbd71834d6a87" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/d4/15/120b566d3f56db745e6577f2360ef5f8fad9b254a0a19526bc085e075390" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/index-v5/d4/15/120b566d3f56db745e6577f2360ef5f8fad9b254a0a19526bc085e075390" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/tsbuildinfo/sh-base.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/tsbuildinfo/sh-base.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/tsbuildinfo/sh-core.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/.angular/cache/18.2.8/ng-packagr/tsbuildinfo/sh-core.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-base.service.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-base.service.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-http-client.service.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/services/sh-http-client.service.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/utils/sh-utils.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/esm2022/lib/utils/sh-utils.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/fesm2022/sh-base.mjs.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-base.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-base.service.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-http-client.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/lib/services/sh-http-client.service.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-core/esm2022/lib/sh-core.service.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-core/esm2022/public-api.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-core/esm2022/public-api.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-core/fesm2022/sh-core.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-core/fesm2022/sh-core.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-core/fesm2022/sh-core.mjs.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-core/fesm2022/sh-core.mjs.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-core/lib/sh-core.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/sh-core/public-api.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-core/public-api.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/sh-base/src/lib/services/sh-base.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/services/sh-base.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/lib/sh-core.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-core.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/lib/sh-core.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/lib/api/service/sh-core.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/sh-core/src/public-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-core/src/public-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sh-base/lib/utils/sh-utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/sh-base/lib/utils/sh-utils.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/bin/uuid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/md5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/md5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/nil.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/nil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/regex.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/regex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/rng.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/rng.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/sha1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/sha1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/stringify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v3.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v35.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v35.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v4.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/version.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/md5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/nil.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/regex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/rng.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/sha1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/stringify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v35.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/version.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/md5-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/md5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/nil.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/regex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/rng-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/rng.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/sha1-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/sha1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/stringify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuid.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuidNIL.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuidParse.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuidStringify.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuidValidate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuidVersion.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuidv1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuidv3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuidv4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/umd/uuidv5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/uuid-bin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v35.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/version.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uuid/wrapper.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/sh-base/src/lib/utils/sh-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/sh-base/src/lib/utils/sh-utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +183,8 @@
       <workItem from="1730701157082" duration="7394000" />
       <workItem from="1730932540263" duration="4481000" />
       <workItem from="1731240028888" duration="1000" />
-      <workItem from="1731245574091" duration="2439000" />
+      <workItem from="1731245574091" duration="3222000" />
+      <workItem from="1731405067812" duration="576000" />
     </task>
     <task id="LOCAL-00001" summary="@auth0/angular-jwt added to sh-authentication peerDependencies...">
       <option name="closed" value="true" />
@@ -195,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730937059739</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="sh core service">
+      <option name="closed" value="true" />
+      <created>1731251818980</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731251818981</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +274,6 @@
     <option name="additionalRoots">
       <list>
         <option value="$PROJECT_DIR$/dist/sh-authentication" />
-        <option value="$PROJECT_DIR$/dist/sh-base" />
       </list>
     </option>
   </component>
@@ -213,6 +283,7 @@
     <MESSAGE value="base service to handle all http call ..." />
     <MESSAGE value="...." />
     <MESSAGE value="local storage service..." />
-    <option name="LAST_COMMIT_MESSAGE" value="local storage service..." />
+    <MESSAGE value="sh core service" />
+    <option name="LAST_COMMIT_MESSAGE" value="sh core service" />
   </component>
 </project>
